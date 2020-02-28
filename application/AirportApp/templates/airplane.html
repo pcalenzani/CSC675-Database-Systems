@@ -1,0 +1,44 @@
+{% extends "header.html" %}
+{% block body %}
+<div class="row" style="margin-top: 80px">
+    <div class="col-md-12">
+        <h3 class="text-center">Airplanes</h3>
+    </div>
+</div>
+
+<div class="row" style="margin: 35px 20px 20px;">
+
+    <table class="table table-dark table-striped table-bordered">
+        <thead>
+        <tr class="bg-primary">
+            <th scope="col" style="width: 15%">ID</th>
+            <th scope="col" style="width: 25%">Name</th>
+            <th scope="col" style="width: 20%">Flight ID</th>
+            <th scope="col" style="width: 20%">Company</th>
+            <th scope="col" style="width: 20%">Operation</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for plane in airplanes %}
+        <tr>
+            <th scope="row">{{ plane.idAirplane }}</th>
+            <td>{{ plane.name }}</td>
+            <td>{{ plane.idFlight }}</td>
+            <td>{{ plane.idCompany }}</td>
+            <td>
+                <div class="row text-center">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <a class="btn btn-outline-primary btn-block" href="/airplaneUpdate/{{ plane.idAirplane }}"
+                           role="button">Edit</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+</div>
+{% endblock %}

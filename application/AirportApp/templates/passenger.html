@@ -1,0 +1,63 @@
+{% extends "header.html" %}
+{% block body %}
+<div class="row" style="margin-top: 80px">
+    <div class="col-md-12">
+        <h3 class="text-center">Search for a Passenger</h3>
+    </div>
+</div>
+<div class="row" style="margin-top: 20px">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-md-9">
+                    <input class="form-control" type="text" placeholder="Enter Passenger Name" name="name"
+                           value="{{ request.form.name}}">
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-primary btn-block" type="submit" name="btn" value="psearch">Search</button>
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+<div class="row" style="margin: 35px 20px 20px;">
+
+    {% if results %}
+    <table class="table table-dark table-striped table-bordered">
+        <thead>
+        <tr class="bg-primary">
+            <th scope="col" style="width: 20%">ID</th>
+            <th scope="col" style="width: 25%">Name</th>
+            <th scope="col" style="width: 25%">Flight ID</th>
+            <th scope="col" style="width: 30%">Operation</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for passenger in results %}
+        <tr>
+            <th scope="row">{{ passenger.idPassenger }}</th>
+            <td>{{ passenger.name }}</td>
+            <td>{{ passenger.idFlight }}</td>
+            <td>
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <a class="btn btn-outline-primary btn-block" href="/deletePassenger/{{ passenger.idPassenger }}"
+                           role="button">Delete</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+    {% endif %}
+</div>
+
+{% endblock %}

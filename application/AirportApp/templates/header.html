@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static' , filename = 'resources/airplane.png')}}">
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+</head>
+
+<body style="background: url(https://images2.minutemediacdn.com/image/upload/c_crop,h_1418,w_2518,x_0,y_247/f_auto,q_auto,w_1100/v1554745450/shape/mentalfloss/555807istock-932651818.jpg);
+        background-size: 100% ;  mask-border-repeat: space">
+
+<header>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="col-md-2"></div>
+            <ul class="col-md-8 navbar-nav mr-auto mt-2 mt-lg-0">
+                <div>
+                    <a class="navbar-brand" href=/home>
+                        <img src=" {{ url_for('static' , filename = 'resources/airplane.png') }}"
+                             width="30"
+                             height="30" class="d-inline-block align-top" alt=""> Airport of Oakland
+                    </a>
+                </div>
+
+                <div>
+                    <li class="nav-item active">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            Flights
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/flight">Flight Info</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/addflight">Add Flight</a>
+                        </div>
+                    </li>
+                </div>
+
+
+                <div>
+                    <a class="nav-link text-white" href="/passenger" role="button" aria-haspopup="true">Passengers</a>
+                </div>
+
+                <div>
+                    <a class="nav-link text-white" href="/airplane" role="button" aria-haspopup="true">Airplanes</a>
+                </div>
+
+                <div>
+                    <a class="nav-link text-white" href="/gate" role="button" aria-haspopup="true">Gates</a>
+                </div>
+
+            </ul>
+            <div class="col-md-2"></div>
+
+        </nav>
+    </div>
+
+
+</header>
+
+<!--    Python code can be inserted with these brackets         -->
+<!--    For logic code, use single brackets and % symbols       -->
+<!--    For variables, use double brackets like the title above -->
+<div class="container-fluid">
+    <div class="container">
+        <div class="row" style="min-height: 100vh;">
+            <div class="col-12 bg-light">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<footer>
+    <div>
+        <nav class="navbar fixed-bottom  navbar-dark bg-dark">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-center">
+                <h4 class="text-lg-center text-light">CSC675 - Team 7</h4>
+                <a href="/support">
+                    <button class="btn btn-warning btn-lg my-2 my-sm-0" type="submit">Support</button>
+                </a>
+            </div>
+            <div class="col-md-4"></div>
+
+        </nav>
+    </div>
+</footer>
+</html>
+

@@ -1,0 +1,21 @@
+{% extends "header.html" %}
+{% block body %}
+<div class="row" style="margin-top: 80px">
+    <div class="col-md-12">
+        <h3 class="text-center">Add a New Flight</h3>
+    </div>
+</div>
+<div class="px-4">
+<form action="{{ url_for('addflight') }}" method="post">
+    <div class="form-group">
+        <label>Departure Time</label>
+        <input class="form-control" type="datetime-local" value="2019-12-06T13:45:00" name="departure">
+    </div>
+    <div class="form-group">
+        <label>Arrival Time</label>
+        <input class="form-control" type="datetime-local" value="2019-12-06T13:45:00" name="arrival">
+    </div>
+  <input class="btn btn-primary" type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}

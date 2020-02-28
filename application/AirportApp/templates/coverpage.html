@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel = "shortcut icon" href="{{ url_for('static' , filename = 'open-iconic/png/airplane.png')}}">
+    <link rel = "shortcut icon" href="{{ url_for('static' , filename = 'open-iconic/png/F1.jpeg')}}">
+</head>
+
+<body style="background: url(https://images2.minutemediacdn.com/image/upload/c_crop,h_1418,w_2518,x_0,y_247/f_auto,q_auto,w_1100/v1554745450/shape/mentalfloss/555807istock-932651818.jpg); background-size: 100% ;  mask-border-repeat: space">
+
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="col-md-2"></div>
+            <ul class="col-md-8 navbar-nav mr-auto mt-2 mt-lg-0">
+                <div>
+                        <a class="navbar-brand" href=/home>
+                            <img src=" {{ url_for('static' , filename = 'resources/airplane.png') }}"
+                                 width="30"
+                                 height="30" class="d-inline-block align-top" alt=""> Airport of Oakland
+                        </a>
+                </div>
+            </ul>
+        </nav>
+     </div>
+
+     <div class="container-fluid">
+         <h1 class="cover-heading container-fluid"  style="margin-left: 320px; margin-top: 220px;" > </h1>
+     </div>
+
+     <div class="container-fluid text-center">
+         <a  href="/home">
+            <button type="button"  class="btn btn-lg btn-primary" style="margin-top: 165px;">Enter</button>
+          </a>
+     </div>
+
+
+
+ </header>
+
+<footer>
+    <div>
+        <nav class="navbar fixed-bottom  navbar-dark bg-dark">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 text-center">
+                <h4 class="text-lg-center text-light">CSC675 - Team 7</h4>
+                <a href="/support">
+                    <button class="btn btn-warning btn-lg my-2 my-sm-0" type="submit">Support</button>
+                </a>
+            </div>
+            <div class="col-md-4"></div>
+        </nav>
+     </div>
+</footer>
+
+
+
+    <!--    Python code can be inserted with these brackets         -->
+<!--    For logic code, use single brackets and % symbols       -->
+<!--    For variables, use double brackets like the title above -->
+    {% block body %}{% endblock %}
+</body>
+
+</html>
